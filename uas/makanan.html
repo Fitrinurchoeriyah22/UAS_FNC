@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Daftar Makanan</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="newstyle.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+<style>
+</style>
+</head>
+<body>
+  <header>
+  <center>
+
+    RUMAH MAKAN KARTINI
+    
+  </center>
+  </header>
+
+<div class="side">
+  <a href="contoh.html">Home</a>
+  <a href="makanan.html">Menu</a>
+  <a href="#Daftar">Daftar</a>
+  <a href="#Kontak">Kontak</a>
+  <a href="#Bantuan">Bantuan</a>
+</div>
+
+<div class="row">
+  <div class="column">
+    <form action="/action_page.php" style="max-width:500px;margin:auto">
+
+<table>
+  <tr class="header">
+                    <th style="width:5%;">No</th>
+                    <th style="width:15%;">Aksi</th>
+                    <th>Gambar</th>
+                    <th>Nis</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Jurusan</th>
+                </tr>
+                <tr>
+                    <?php $i = 1; ?>
+                    <?php while ($row = mysqli_fetch_assoc($results)) : ?>
+                        <td><?= $i; ?></td>
+                        <td><a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>|
+                            <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('anda yakin');">Hapus</a>
+                        </td>
+                        <td><img src="<?= $row["gambar"]; ?>" alt="" width="50%"></td>
+                        <td><?= $row["nis"]; ?></td>
+                        <td><?= $row["nama"]; ?></td>
+                        <td><?= $row["email"]; ?></td>
+                        <td><?= $row["jurusan"]; ?></td>
+
+                </tr>
+</table>
+ 
+  
+</div>
+<div class="footer">
+  <p>&copy; Fitri Nurchoeriyah</p>
+</div>
+
+</body>
+</html>
